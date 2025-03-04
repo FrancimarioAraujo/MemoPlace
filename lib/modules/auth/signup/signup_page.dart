@@ -4,12 +4,12 @@ import 'package:memoplace/shared/theme/constants/app_paddings.dart';
 import 'package:memoplace/shared/validators/email_validator.dart';
 import 'package:memoplace/shared/validators/password_validator.dart';
 
-class LoginPage extends StatefulWidget {
+class SignUpPage extends StatefulWidget {
   @override
-  _LoginPageState createState() => _LoginPageState();
+  _SignUpPageState createState() => _SignUpPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _SignUpPageState extends State<SignUpPage> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   final  _formKey = GlobalKey<FormState>();
@@ -30,7 +30,7 @@ class _LoginPageState extends State<LoginPage> {
             child: Text("MemoPlace", style: Theme.of(context).textTheme.headlineLarge,
                 ),
                     ),
-                TextFormField(
+                     TextFormField(
                   keyboardType: TextInputType.emailAddress,
                   controller: _emailController,
                   decoration: InputDecoration(
@@ -38,6 +38,7 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   validator: EmailValidator.validate,
                 ),
+                
                 TextFormField(
                   controller: _passwordController,
                   obscureText: true,
@@ -46,6 +47,23 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                   validator: PasswordValidator.validate,
                 ),
+                TextFormField(
+                  keyboardType: TextInputType.emailAddress,
+                  controller: _emailController,
+                  decoration: InputDecoration(
+                    labelText: 'Nome Completo',
+                  ),
+                  validator: EmailValidator.validate,
+                ),
+                TextFormField(
+                  keyboardType: TextInputType.emailAddress,
+                  controller: _emailController,
+                  decoration: InputDecoration(
+                    labelText: 'Nome de Usuário',
+                  ),
+                  validator: EmailValidator.validate,
+                ),
+               
                 SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
@@ -53,32 +71,17 @@ class _LoginPageState extends State<LoginPage> {
                        _formKey.currentState!.validate();
                     },
                     child: Text(
-                      'Entrar',
+                      'Cadastrar-se',
                     ),
                   ),
                 ),
                 TextButton(
                   onPressed: () {
-                   
+                   Modular.to.pushNamed('/');
                   },
                   child: Text(
-                    'Esqueceu a senha?',
+                    'Já tenho uma conta',
                   ),
-                ),
-                
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text('Não tem uma conta?'),
-                    TextButton(
-                      onPressed: () {
-                        Modular.to.pushNamed('/signup');
-                      },
-                      child: Text(
-                        'Cadastre-se',
-                      ),
-                    ),
-                  ],
                 ),
               ],
             ),
