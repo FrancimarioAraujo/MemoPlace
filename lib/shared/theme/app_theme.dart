@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:memoplace/shared/theme/components/buttons_theme.dart';
+import 'package:memoplace/shared/theme/components_theme/buttons_theme.dart';
 import 'package:memoplace/shared/theme/constants/app_colors.dart';
 
 class AppTheme {
@@ -12,11 +12,14 @@ class AppTheme {
       surface: AppColors.background,
     ),
     textTheme: TextTheme(
-      bodyLarge: TextStyle(color: AppColors.textPrimary, fontSize: 16),
-      bodyMedium: TextStyle(color: AppColors.textPrimary, fontSize: 14),
-      bodySmall: TextStyle(color: AppColors.textPrimary, fontSize: 12),
+      headlineLarge: TextStyle(
+        fontWeight: FontWeight.bold,
+      ),
     ),
   elevatedButtonTheme: ButtonsTheme.elevatedButtonLightTheme,
 
   );
+
+
+
 }
