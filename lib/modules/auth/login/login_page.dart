@@ -59,7 +59,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 TextButton(
                   onPressed: () {
-                   
+                   Modular.to.pushNamed('/forgot');
                   },
                   child: Text(
                     'Esqueceu a senha?',
