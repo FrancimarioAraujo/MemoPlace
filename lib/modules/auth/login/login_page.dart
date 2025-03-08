@@ -3,6 +3,7 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:memoplace/shared/theme/constants/app_paddings.dart';
 import 'package:memoplace/shared/validators/email_validator.dart';
 import 'package:memoplace/shared/validators/password_validator.dart';
+import 'package:memoplace/shared/constants/app_strings.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -12,7 +13,8 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-  final  _formKey = GlobalKey<FormState>();
+  final _formKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,16 +27,18 @@ class _LoginPageState extends State<LoginPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                    Container(
-            padding: AppPaddings.verticalMedium,
-            child: Text("MemoPlace", style: Theme.of(context).textTheme.headlineLarge,
+                Container(
+                  padding: AppPaddings.verticalMedium,
+                  child: Text(
+                    AppStrings.titleApp,
+                    style: Theme.of(context).textTheme.headlineLarge,
+                  ),
                 ),
-                    ),
                 TextFormField(
                   keyboardType: TextInputType.emailAddress,
                   controller: _emailController,
                   decoration: InputDecoration(
-                    labelText: 'E-mail',
+                    labelText: AppStrings.email,
                   ),
                   validator: EmailValidator.validate,
                 ),
@@ -42,7 +46,7 @@ class _LoginPageState extends State<LoginPage> {
                   controller: _passwordController,
                   obscureText: true,
                   decoration: InputDecoration(
-                    labelText: 'Senha',
+                    labelText: AppStrings.password,
                   ),
                   validator: PasswordValidator.validate,
                 ),
@@ -50,32 +54,31 @@ class _LoginPageState extends State<LoginPage> {
                   width: double.infinity,
                   child: ElevatedButton(
                     onPressed: () {
-                       _formKey.currentState!.validate();
+                      _formKey.currentState!.validate();
                     },
                     child: Text(
-                      'Entrar',
+                      AppStrings.buttonEnter,
                     ),
                   ),
                 ),
                 TextButton(
                   onPressed: () {
-                   Modular.to.pushNamed('/forgot');
+                    Modular.to.pushNamed('/auth/forgot');
                   },
                   child: Text(
-                    'Esqueceu a senha?',
+                    AppStrings.forgotPassword,
                   ),
                 ),
-                
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text('Não tem uma conta?'),
+                    Text(AppStrings.dontHaveAccount),
                     TextButton(
                       onPressed: () {
-                        Modular.to.pushNamed('/signup');
+                        Modular.to.pushNamed('/auth/signup');
                       },
                       child: Text(
-                        'Cadastre-se',
+                        AppStrings.buttonSignUp,
                       ),
                     ),
                   ],

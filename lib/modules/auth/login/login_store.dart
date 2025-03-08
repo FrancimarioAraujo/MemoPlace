@@ -16,7 +16,7 @@ abstract class _LoginStoreBase with Store {
 
   @action
   void setEmail(String value) => email = value;
-
+  
   @action
   void setPassword(String value) => password = value;
 

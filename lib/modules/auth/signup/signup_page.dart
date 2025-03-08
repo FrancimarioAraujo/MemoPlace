@@ -80,7 +80,7 @@ class _SignUpPageState extends State<SignUpPage> {
                 ),
                 TextButton(
                   onPressed: () {
-                   Modular.to.pushNamed('/');
+                   Modular.to.pushNamed('/auth');
                   },
                   child: Text(
                     'Já tenho uma conta',
