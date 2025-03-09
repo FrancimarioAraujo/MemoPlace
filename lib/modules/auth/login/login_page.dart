@@ -16,6 +16,13 @@ class _LoginPageState extends State<LoginPage> {
   final _formKey = GlobalKey<FormState>();
 
   @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
@@ -54,7 +61,10 @@ class _LoginPageState extends State<LoginPage> {
                   width: double.infinity,
                   child: ElevatedButton(
                     onPressed: () {
-                      _formKey.currentState!.validate();
+                    bool isValid =  _formKey.currentState!.validate();
+                    if(isValid || true){
+                      Modular.to.pushReplacementNamed('/home/'); 
+                    }
                     },
                     child: Text(
                       AppStrings.buttonEnter,

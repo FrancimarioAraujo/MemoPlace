@@ -17,7 +17,18 @@ class AppTheme {
       ),
     ),
   elevatedButtonTheme: ButtonsTheme.elevatedButtonLightTheme,
-
+  appBarTheme: AppBarTheme(
+          color: AppColors.primary,
+          iconTheme: IconThemeData(color: AppColors.textSecondary),
+          titleTextStyle: TextStyle(color: AppColors.textSecondary, fontSize: 20)
+        ),
+        bottomNavigationBarTheme: BottomNavigationBarThemeData(
+          showSelectedLabels: false,
+          showUnselectedLabels: false,
+          selectedItemColor: AppColors.dark,
+          unselectedItemColor: AppColors.secondary,
+          backgroundColor: AppColors.primary,
+        )
   );
 
 
