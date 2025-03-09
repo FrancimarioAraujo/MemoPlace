@@ -71,7 +71,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   width: double.infinity,
                   child: ElevatedButton(
                     onPressed: () {
-                       _formKey.currentState!.validate();
+                      //  _formKey.currentState!.validate();
                     },
                     child: Text(
                       'Cadastrar-se',

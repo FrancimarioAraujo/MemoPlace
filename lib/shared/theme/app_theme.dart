@@ -23,6 +23,8 @@ class AppTheme {
           titleTextStyle: TextStyle(color: AppColors.textSecondary, fontSize: 20)
         ),
         bottomNavigationBarTheme: BottomNavigationBarThemeData(
+          selectedIconTheme: IconThemeData(size: 30),
+          unselectedIconTheme: IconThemeData(size: 30),
           showSelectedLabels: false,
           showUnselectedLabels: false,
           selectedItemColor: AppColors.dark,

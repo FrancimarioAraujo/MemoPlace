@@ -17,9 +17,7 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
-  
   }
 
   @override
@@ -61,10 +59,9 @@ class _LoginPageState extends State<LoginPage> {
                   width: double.infinity,
                   child: ElevatedButton(
                     onPressed: () {
-                    bool isValid =  _formKey.currentState!.validate();
-                    if(isValid || true){
+                    // bool isValid =  _formKey.currentState!.validate();
                       Modular.to.pushReplacementNamed('/home/'); 
-                    }
+                    
                     },
                     child: Text(
                       AppStrings.buttonEnter,
